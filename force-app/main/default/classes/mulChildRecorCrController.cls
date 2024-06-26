@@ -1,5 +1,14 @@
+/**
+ * @description       : Extract the list of child objects that was selected in the initial set up.
+ *                      Extract the list of fields to be displayed for a child object selected.
+ *                      Create records for the child object selected
+ * @author            : Jeyalakshmi
+ * @last modified on  : 26-06-2024
+ * @last modified by  : Jeyalakshmi
+**/
 public with sharing class mulChildRecorCrController {
 
+//Fetch the list of child objects.
 @AuraEnabled(cacheable=true)
 public static List<String> getChildObjectList(String parObjectName){
     try {
@@ -20,6 +29,7 @@ public static List<String> getChildObjectList(String parObjectName){
     }
 }
 
+//Fetch all the fields from the selected child object
 @AuraEnabled(cacheable=true)
     public static List<Map<String,String>> getFieldNames(String parObjectName, String objectName){
     try {
@@ -50,6 +60,7 @@ public static List<String> getChildObjectList(String parObjectName){
     }
 }
 
+// Create records for the child object selected.
 @AuraEnabled
 public static List<SObject> createChildRecords(List<Map<String,String>> lstChildRecords, String parObjectName, String ObjectName, string parRecordId){
     try {

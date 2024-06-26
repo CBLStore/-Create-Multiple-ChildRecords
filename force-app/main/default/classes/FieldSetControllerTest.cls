@@ -1,6 +1,13 @@
+/**
+ * @description       : Test class for FieldSetController Apex class
+ * @author            : Jeyalakshmi
+ * @last modified on  : 26-06-2024
+ * @last modified by  : Jeyalakshmi
+**/
 @isTest
 public class FieldSetControllerTest {
     
+    //Test method for getAllFields()
     @isTest
     static void testGetAllFields() {
         // Test data
@@ -16,7 +23,8 @@ public class FieldSetControllerTest {
         System.assertEquals(true, fieldNames.contains('Industry'));
         
     }
-    
+
+    //Test method for getChildObjectLookupFields()
     @isTest
     static void testGetChildObjectLookupFields() {
         // Test data
@@ -31,8 +39,9 @@ public class FieldSetControllerTest {
         System.assertEquals(true, lookupFields.contains('AccountId'));
     }
     
+    //Test method for getChildObjectLookupFields()
     @isTest
-    static void testCreateFieldSet() {
+    static void createFieldSet() {
         // Test data
         String parentObjectName = 'Account'; // Replace with your desired parent object API name
         String objectApiName = 'Contact'; // Replace with your desired object API name

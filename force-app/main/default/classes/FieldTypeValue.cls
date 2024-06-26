@@ -1,3 +1,10 @@
+/**
+ * @description       : This Apex class provides utility methods for dynamically retrieving and converting field types 
+ *                      and values for Salesforce objects
+ * @author            : Jeyalakshmi
+ * @last modified on  : 26-06-2024
+ * @last modified by  : Jeyalakshmi
+**/
 public with sharing class FieldTypeValue {
     public static Schema.SObjectType getObjectType(String objectName) {
         // Get the object type dynamically

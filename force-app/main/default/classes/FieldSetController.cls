@@ -1,12 +1,19 @@
-
+/**
+ * @description       : Apex class to fields in child object and create records in CustomFieldSet__c object with the 
+ *                      selected fields
+ * @author            : Jeyalakshmi
+ * @last modified on  : 26-06-2024
+ * @last modified by  : Jeyalakshmi
+**/
 public with sharing class FieldSetController {
     
-    //To fetch all fields
+    //To fetch all fields for the child object selected
     @AuraEnabled(cacheable=true)
     public static List<String> getAllFields(String childObjectApiName) {
         List<String> fieldNames = new List<String>();
         try {
-        
+            //Exclude all Lookup fields, formula fields
+            //Include all other fields which are updateable 
             Schema.DescribeSObjectResult describeResult = Schema.getGlobalDescribe().get(childObjectApiName).getDescribe();
             for (Schema.SObjectField field : describeResult.fields.getMap().values()) {
                 Schema.DescribeFieldResult fieldDescribe = field.getDescribe();
@@ -25,6 +32,7 @@ public with sharing class FieldSetController {
         return fieldNames;
     }
 
+    //To fetch lookup fields which is related to the parent object for the child object selected
     @AuraEnabled(cacheable=true)
     public static List<String> getChildObjectLookupFields(String childObjectName, String parentObjectName) {
         List<String> lookupFields = new List<String>();
@@ -57,6 +65,7 @@ public with sharing class FieldSetController {
         return lookupFields;
     }
     
+    //Create records in CustomFieldSet__c for each field that is selected in the child object
     @AuraEnabled
     public static String createFieldSet(String parObjectName, List<String> lookUpField, String objectApiName, List<String> fields){
         String message;
