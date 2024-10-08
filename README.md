@@ -20,11 +20,12 @@ Fields
 ![image](https://github.com/CBLStore/Create-MultipleChildRecords/assets/144254863/326cd7a7-3b39-474f-ab3e-47df545ddd4d)
 
 
-After Initial Set up This component can be placed in any record page of an object in Salesforce. It is designed to capture multiple child record values and create all the records on single click. Example of this component placed in Account Record Page Component Screenshot
+After Initial Set up This component can be placed in any record page of an object in Salesforce. It is designed to capture multiple child record values and create all the records on single click. Example of this component placed in Account Record Page Component as a Quick Action - Create Child Records.
 
-![image](https://github.com/CBLStore/Create-MultipleChildRecords/assets/144254863/657a92b6-24af-4d24-8f47-15b3e39f06a5)
+![image](https://github.com/user-attachments/assets/2946d9ad-5166-45d2-8aa0-b0068279938f)
 
-On Clicking Create Records, select the child object for which the multiple records to be created.(Related Object will show all the child objects configured in the initial set up).
+
+On Clicking Create Child Records, select the child object for which the multiple records to be created.(Related Object will show all the child objects configured in the initial set up).
 
  ![image](https://github.com/CBLStore/Create-MultipleChildRecords/assets/144254863/3c3366d1-2221-4ec1-b864-6fec61648758)
 
