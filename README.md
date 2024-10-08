@@ -22,7 +22,8 @@ Fields
 
 After Initial Set up This component can be placed in any record page of an object in Salesforce. It is designed to capture multiple child record values and create all the records on single click. Example of this component placed in Account Record Page Component as a Quick Action - Create Child Records.
 
-![image](https://github.com/user-attachments/assets/2946d9ad-5166-45d2-8aa0-b0068279938f)
+![image](https://github.com/user-attachments/assets/67839c3c-ff8b-4338-aaaa-e48629584239)
+
 
 
 On Clicking Create Child Records, select the child object for which the multiple records to be created.(Related Object will show all the child objects configured in the initial set up).
