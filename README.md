@@ -54,6 +54,7 @@ Click on Done.
 **Limitations**
 1.	Required fields for a child object are not added automatically in the initial set up. Need to select the required fields manually.
 2.	Lookup fields are not added to the list of fields in the initial set up, hence lookup fields cannot be used for multiple child creation.
+3.	Picklist values are not shown in the datatable. 
    
 **Enhancements**
 All the limitations mentioned are part of future enhancements.
