@@ -1,13 +1,6 @@
-/**
- * @description       : Test class for FieldTypeValue Apex class
- * @author            : Jeyalakshmi
- * @last modified on  : 26-06-2024
- * @last modified by  : Jeyalakshmi
-**/
 @isTest
 public class FieldTypeValueTest {
     
-    //Test Method for getObjectType()
     @isTest
     static void testGetObjectType() {
         // Test data
@@ -23,7 +16,6 @@ public class FieldTypeValueTest {
         // ...
     }
     
-    //Test Method for getFieldDescribe()
     @isTest
     static void testGetFieldDescribe() {
         // Test data
@@ -41,7 +33,6 @@ public class FieldTypeValueTest {
         
     }
     
-    //Test Method for getFieldType()
     @isTest
     static void testGetFieldType() {
         // Test data
@@ -58,24 +49,23 @@ public class FieldTypeValueTest {
         System.assertEquals('STRING', fieldType);
     }
     
-    //Test Method for convertFieldValue()
     @isTest
-    static void testConvertFieldValue() {
-        // Test data
-        String objectName = 'Account'; // Replace with your desired object API name
-        String fieldName = 'Name'; // Replace with your desired field API name
-        String fieldValue = 'Test Account Name'; // Replace with your desired field value
-        
-        // Call the method under test
-        Object convertedValue = FieldTypeValue.convertFieldValue(objectName, fieldName, fieldValue);
-        
-        // Verify that the converted value is not null
-        System.assertNotEquals(null, convertedValue);
-        
-        // Example:
-        System.assertEquals('Test Account Name', convertedValue);
-        
-    }
+static void testConvertFieldValue() {
+    // Test data
+    String objectName = 'Account'; // Replace with your desired object API name
+    String fieldName = 'Name'; // Replace with your desired field API name
+    String fieldValue = 'Test Account Name'; // Replace with your desired field value
+    
+    // Call the method under test
+    Object convertedValue = FieldTypeValue.convertFieldValue(objectName, fieldName, fieldValue);
+    
+    // Verify that the converted value is not null
+    System.assertNotEquals(null, convertedValue);
+    
+    // Example:
+    System.assertEquals('Test Account Name', convertedValue);
+    
+}
 
 
 }

@@ -1,10 +1,3 @@
-/**
- * @description       : This Apex class provides utility methods for dynamically retrieving and converting field types 
- *                      and values for Salesforce objects
- * @author            : Jeyalakshmi
- * @last modified on  : 26-06-2024
- * @last modified by  : Jeyalakshmi
-**/
 public with sharing class FieldTypeValue {
     public static Schema.SObjectType getObjectType(String objectName) {
         // Get the object type dynamically
@@ -56,11 +49,16 @@ public with sharing class FieldTypeValue {
                 return Date.valueOf(fieldValue);
             }
             when DATETIME {
-                return DateTime.valueOf(fieldValue);
+                if(fieldValue.endsWith('Z')){
+                    fieldValue = fieldValue.substring(0, fieldValue.length() - 1); // Remove 'Z'
+                    return DateTime.valueOf(fieldValue.replace('T', ' '));
+                }else{
+                    return DateTime.valueOf(fieldValue);
+                }
+                
             }
             when else {
-                // Default to string for unknown types
-                return fieldValue;
+                return fieldValue; // Default to string for unknown types
             }
         }
     }       
